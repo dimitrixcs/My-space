@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080c18" />
+    <meta name="description" content="My espace — seu universo pessoal de produtividade, arquivos e ideias." />
+    <title>My espace — seu espaço</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+  </head>
+  <body>
+    <div id="app">
+      <main class="launch-help" aria-labelledby="launch-title">
+        <div class="launch-orbit" aria-hidden="true">me</div>
+        <p class="launch-kicker">MY ESPACE · ORBITAL EDITION</p>
+        <h1 id="launch-title">Seu espaço está quase pronto.</h1>
+        <p class="launch-copy">O aplicativo foi aberto como um arquivo local. Como ele usa módulos JavaScript e dependências, o navegador não consegue carregá-lo corretamente com um duplo clique no <code>index.html</code>.</p>
+        <section class="launch-step">
+          <span class="launch-number">01</span>
+          <div><strong>Windows 10/11</strong><p>Feche esta página e dê dois cliques em <code>INICIAR_MY_ESPACE_WINDOWS.bat</code>.</p></div>
+        </section>
+        <section class="launch-step">
+          <span class="launch-number">02</span>
+          <div><strong>macOS ou Linux</strong><p>Abra o Terminal na pasta do projeto e execute <code>./INICIAR_MY_ESPACE_MAC_LINUX.sh</code>. Se necessário, use primeiro <code>chmod +x INICIAR_MY_ESPACE_MAC_LINUX.sh</code>.</p></div>
+        </section>
+        <section class="launch-step">
+          <span class="launch-number">03</span>
+          <div><strong>Prefere não instalar nada?</strong><p>Publique o repositório no GitHub Pages e abra o endereço do site no navegador.</p></div>
+        </section>
+        <p class="launch-footnote">Os scripts iniciam o servidor local e abrem o My espace no navegador. Na primeira execução, precisam de internet para instalar as dependências do projeto.</p>
+        <a class="launch-link" href="https://nodejs.org/" target="_blank" rel="noreferrer">Instalar Node.js <span aria-hidden="true">↗</span></a>
+      </main>
+    </div>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #080c18; color: #eef2ff; }
+      body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(ellipse at 15% 12%, rgba(96,76,202,.28), transparent 42%), radial-gradient(ellipse at 90% 82%, rgba(32,145,173,.15), transparent 38%), #080c18; }
+      .launch-help { box-sizing: border-box; width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: clamp(28px, 6vw, 64px) 0 40px; }
+      .launch-orbit { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid rgba(168,155,255,.55); border-radius: 19px; background: linear-gradient(145deg, rgba(139,124,255,.35), rgba(37,196,208,.12)); box-shadow: 0 12px 50px rgba(95,75,220,.24); font-size: 25px; font-weight: 800; letter-spacing: -2px; }
+      .launch-orbit span { color: #8b7cff; }
+      .launch-kicker { margin: 27px 0 10px; color: #aaa4ff; font-size: 11px; font-weight: 800; letter-spacing: .2em; }
+      h1 { max-width: 650px; margin: 0; font-size: clamp(32px, 6vw, 54px); line-height: 1.06; letter-spacing: -.045em; }
+      .launch-copy { max-width: 680px; margin: 20px 0 28px; color: #b2bdd3; font-size: 16px; line-height: 1.7; }
+      code { padding: 3px 6px; border: 1px solid #29344c; border-radius: 6px; background: #10182a; color: #e2ddff; overflow-wrap: anywhere; }
+      .launch-step { display: flex; gap: 16px; align-items: flex-start; margin: 12px 0; padding: 20px; border: 1px solid rgba(148,163,184,.18); border-radius: 16px; background: rgba(18,27,46,.72); }
+      .launch-number { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 11px; background: rgba(139,124,255,.14); color: #b5aaff; font-size: 12px; font-weight: 800; }
+      .launch-step strong { display: block; margin: 2px 0 7px; }
+      .launch-step p { margin: 0; color: #aeb9cf; line-height: 1.65; font-size: 14px; }
+      .launch-footnote { margin: 22px 2px; color: #8f9cb6; font-size: 12px; line-height: 1.65; }
+      .launch-link { display: inline-flex; gap: 9px; align-items: center; color: #c5bdff; font-size: 14px; text-decoration: none; }
+      .launch-link:hover { color: white; }
+      @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+    </style>
+    <script>
+      // Abrir index.html por file:// não inicia Vite nem resolve dependências npm.
+      // Mostramos instruções em vez de deixar o visitante diante de uma tela vazia.
+      if (location.protocol !== 'file:') {
+        document.getElementById('app').innerHTML = '';
+      }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

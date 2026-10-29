@@ -1,0 +1,10 @@
+{
+  "name": "My espace",
+  "short_name": "My espace",
+  "description": "Espaço pessoal para arquivos, tarefas e produtividade",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [{"src":"./favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
